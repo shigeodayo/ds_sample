@@ -2,6 +2,8 @@
 
 distance sensor sample programs
 
+[GP2Y0A710K](http://akizukidenshi.com/catalog/g/gI-03157/ "http://akizukidenshi.com/catalog/g/gI-03157/")
+
 ## ds_sample1.ino
 
 一定以上近づくと、LEDが光る
