@@ -45,7 +45,7 @@ void loop() {
 
 
 /** LEDを徐々に光らせる **/
-void brightenGradually() {
+void brightenLinearly() {
   int stepNum = 1 + (LED_VALUE_MAX - LED_VALUE_MIN) / LED_VALUE_STEP;
   int eachStepDelay = LED_WORK_TIME_MS / stepNum;
 
