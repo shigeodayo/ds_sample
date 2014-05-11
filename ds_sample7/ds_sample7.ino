@@ -38,9 +38,9 @@ void loop() {
 
   /* 一定以上近づくと、段階的に光り始め、その後段階的に消えていく */
   if (distValue > DIST_VALUE_THRESHOLD) {
-    brightenGradually();
+    brightenLinearly();
     delay(SWITCH_WAIT_TIME);
-    dimGradually();
+    dimLinearly();
   }
 
   digitalWrite(LED_PIN, LOW);  // 近づいていないとき、LEDは消えている

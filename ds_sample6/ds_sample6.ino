@@ -35,7 +35,7 @@ void loop() {
 
   /* 一定以上近づくと、段階的に消え始める */
   if (distValue > DIST_VALUE_THRESHOLD) {
-    dimGradually();
+    dimLinearly();
   }
 
   digitalWrite(LED_PIN, HIGH);  // 近づいていないとき、LEDは光っている
