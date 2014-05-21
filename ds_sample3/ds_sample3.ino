@@ -10,7 +10,7 @@ const int SENSOR_PIN = 0;   // 測距センサの値を取得するピン (A0)
 
 
 /** LEDが反応する範囲 **/
-const int DIST_VALUE_MIN = 250;   // 反応する距離を示す値の最小値、値が小さいほど測距センサから遠い
+const int DIST_VALUE_MIN = 150;   // 反応する距離を示す値の最小値、値が小さいほど測距センサから遠い
 const int DIST_VALUE_MAX = 500;  // 反応する距離を示す値の最大値、値が大きいほど測距センサから近い
 
 

@@ -10,7 +10,7 @@ const int SENSOR_PIN = 0;   // 測距センサの値を取得するピン (A0)
 
 
 /** LEDが反応を開始する距離を示す定数 **/
-const int DIST_VALUE_THRESHOLD = 500;  // ここを変えるとLEDが反応する距離を変えられる
+const int DIST_VALUE_THRESHOLD = 400;  // ここを変えるとLEDが反応する距離を変えられる
 
 
 /** LEDの明るさの範囲 (0->0V : 255->5V) **/
