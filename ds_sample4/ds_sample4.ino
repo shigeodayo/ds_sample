@@ -5,13 +5,13 @@
 
 
 /** ピンの割り当て **/
-const int LED_PIN    = 3;  // LEDの明るさを調節するピン (3)
-const int SENSOR_PIN = 0;  // 測距センサの値を取得するピン (A0)
+const int LED_PIN    = 11;  // LEDの明るさを調節するピン (11)
+const int SENSOR_PIN = 0;   // 測距センサの値を取得するピン (A0)
 
 
 /** LEDが反応する範囲 **/
-const int DIST_VALUE_MIN = 300;   // 反応する距離を示す値の最小値、値が小さいほど測距センサから遠い
-const int DIST_VALUE_MAX = 650;  // 反応する距離を示す値の最大値、値が大きいほど測距センサから近い
+const int DIST_VALUE_MIN = 250;   // 反応する距離を示す値の最小値、値が小さいほど測距センサから遠い
+const int DIST_VALUE_MAX = 500;  // 反応する距離を示す値の最大値、値が大きいほど測距センサから近い
 
 
 /** setupルーチン、プログラム起動時に最初に呼ばれる **/

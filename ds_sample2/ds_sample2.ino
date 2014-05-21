@@ -5,8 +5,8 @@
 
 
 /** ピンの割り当て **/
-const int LED_PIN    = 3;  // LEDの明るさを調節するピン (3)
-const int SENSOR_PIN = 0;  // 測距センサの値を取得するピン (A0)
+const int LED_PIN    = 11;  // LEDの明るさを調節するピン (11)
+const int SENSOR_PIN = 0;   // 測距センサの値を取得するピン (A0)
 
 
 const int DIST_VALUE_THRESHOLD = 500;  // LEDが反応を開始する距離を示す定数
