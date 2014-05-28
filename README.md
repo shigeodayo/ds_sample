@@ -38,3 +38,7 @@ distance sensor sample programs
 
 一定以上近づくと、LEDが段階的に光り始める、その後段階的に消えていく
 
+### ds_sample8.ino
+
+一定以上近づくと、LEDが段階的に光り始める、その後段階的に消えていく
+
