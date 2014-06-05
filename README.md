@@ -8,7 +8,7 @@ distance sensor sample programs
 
 ![./ds_circuit.png](./ds_circuit.png "./ds_circuit.png")
 
-## sample programs
+## sample programs (distance sensor)
 
 ### ds_sample1.ino
 
@@ -42,11 +42,13 @@ distance sensor sample programs
 
 一定以上近づくと、LEDが段階的に光り始める、その後段階的に消えていく
 
-### ds_sample9.ino
+## sample programs (led)
+
+### led_sample01.ino
 
 ランダムな時間、ランダムな振り幅で、LEDが光っては消えるを繰り返す
 
-### ds_sample10.ino
+### led_sample02.ino
 
 ランダムな時間、ランダムな振り幅で、LEDが光っては消えるを繰り返す。複数のLEDに対応
 

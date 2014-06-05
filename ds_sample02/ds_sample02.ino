@@ -1,5 +1,5 @@
 /**
- *    ds_sample2.ino
+ *    ds_sample02.ino
  *    一定以上近づくと、LEDが消える
  **/
 

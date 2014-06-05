@@ -1,5 +1,5 @@
 /**
- *    ds_sample1.ino
+ *    ds_sample01.ino
  *    一定以上近づくと、LEDが光る
  **/
 

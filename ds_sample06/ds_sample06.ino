@@ -1,5 +1,5 @@
 /**
- *    ds_sample6.ino
+ *    ds_sample06.ino
  *    一定以上近づくと、LEDが段階的に消え始める
  **/
 

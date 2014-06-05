@@ -1,6 +1,6 @@
 /**
- *    ds_sample4.ino
- *    近づくと段階的にLEDが消える
+ *    ds_sample03.ino
+ *    近づくと段階的にLEDが光る
  **/
 
 
@@ -37,9 +37,8 @@ void loop() {
   }
 
   /* map関数: map(value, fromLow, fromHigh, toLow, toHigh)
-   * ある値 (fromLow <= value <= fromHigh)を、 新たな値 (toLow <= newValue <= toHigh)に置き換える */
+   * ある値 (fromLow <= value <= fromHigh)を、新たな値 (toLow <= newValue <= toHigh)に置き換える */
   int ledValue = map(distValue, DIST_VALUE_MIN, DIST_VALUE_MAX, 0, 255);  // 測距センサの値をLEDの光量に置き換える
-  ledValue = 255 - ledValue;       // 最大値から値を引くことで、"ds_sample3"とは逆に段階的に消えるようにする
   analogWrite(LED_PIN, ledValue);  // アナログ出力
                                    // LEDに加わる電圧を0-5Vの間で調整 (ledValue=0 -> 0V : ledValue=255 -> 5V)
 

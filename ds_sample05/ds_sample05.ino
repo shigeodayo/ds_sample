@@ -1,5 +1,5 @@
 /**
- *    ds_sample5.ino
+ *    ds_sample05.ino
  *    一定以上近づくと、LEDが段階的に光り始める
  **/
 

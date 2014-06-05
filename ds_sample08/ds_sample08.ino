@@ -1,5 +1,5 @@
 /**
- *    ds_sample7.ino
+ *    ds_sample08.ino
  *    一定以上近づくと、LEDが段階的に光り始める、その後段階的に消えていく
  **/
 
@@ -18,7 +18,7 @@ const int LED_VALUE_MIN = 0;    // LEDの最小の明るさ
 const int LED_VALUE_MAX = 255;  // LEDの最大の明るさ
 
 const int LED_WORK_TIME_MS = 10000; // LEDが最大/最小の明るさなるまでにかかる時間(ミリ秒)
-const int LED_VALUE_STEP = 5;        // LEDの明るさの増加/減少分
+const int STEP_NUM = 100;            // LEDの明るさが何段階で変化するか
 
 
 const int SWITCH_WAIT_TIME = 5000; // LEDが光っている時間
@@ -38,9 +38,9 @@ void loop() {
 
   /* 一定以上近づくと、段階的に光り始め、その後段階的に消えていく */
   if (distValue > DIST_VALUE_THRESHOLD) {
-    brightenLinearly();
+    brightenGradually();
     delay(SWITCH_WAIT_TIME);
-    dimLinearly();
+    dimGradually();
   }
 
   digitalWrite(LED_PIN, LOW);  // 近づいていないとき、LEDは消えている
@@ -49,35 +49,37 @@ void loop() {
 }
 
 
-/** LEDを徐々に光らせる **/
-void brightenLinearly() {
-  int stepNum = 1 + (LED_VALUE_MAX - LED_VALUE_MIN) / LED_VALUE_STEP;
-  int eachStepDelay = LED_WORK_TIME_MS / stepNum;
+/** LEDを徐々に光らせる。光らせ方はfunctionに従う **/
+void brightenGradually() {
+  int eachStepDelay = LED_WORK_TIME_MS / STEP_NUM;
+  float gain = (LED_VALUE_MAX - LED_VALUE_MIN) / function(STEP_NUM - 1);
 
-  int ledValue = LED_VALUE_MIN;
-  for (int i = 0; i < stepNum; i++) {
+  for (int i = 0; i < STEP_NUM; i++) {
+    int ledValue = gain * function(i) + LED_VALUE_MIN;
     ledValue = constrain(ledValue, 0, 255);  // [0,255]の値しかとらないように制限
     analogWrite(LED_PIN, ledValue);
     Serial.println(ledValue);
-    ledValue += LED_VALUE_STEP;
 
     delay(eachStepDelay);
   }
 }
 
 
-/** LEDを徐々に消す **/
-void dimLinearly() {
-  int stepNum = 1 + (LED_VALUE_MAX - LED_VALUE_MIN) / LED_VALUE_STEP;
-  int eachStepDelay = LED_WORK_TIME_MS / stepNum;
+/** LEDを徐々に消す。消し方はfunctionに従う **/
+void dimGradually() {
+  int eachStepDelay = LED_WORK_TIME_MS / STEP_NUM;
+  float gain = (LED_VALUE_MAX - LED_VALUE_MIN) / function(STEP_NUM - 1);
 
-  int ledValue = LED_VALUE_MAX;
-  for (int i = 0; i < stepNum; i++) {
+  for (int i = 0; i < STEP_NUM; i++) {
+    int ledValue = LED_VALUE_MAX - gain * function(i);
     ledValue = constrain(ledValue, 0, 255);  // [0,255]の値しかとらないように制限
     analogWrite(LED_PIN, ledValue);
     Serial.println(ledValue);
-    ledValue -= LED_VALUE_STEP;
 
     delay(eachStepDelay);
   }
+}
+
+float function(float x) {
+  return x * x;
 }
